@@ -1,4 +1,4 @@
-package net.kama.model;
+package net.kama;
 
 import org.springframework.data.neo4j.annotation.GraphId;
 import org.springframework.data.neo4j.annotation.Indexed;
