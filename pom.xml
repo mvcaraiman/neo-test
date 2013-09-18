@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>net.kama</groupId>
 	<artifactId>bug-sdn</artifactId>
 	<version>1.0-SNAPSHOT</version>
@@ -14,23 +13,37 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.9</junit.version>
 		<slf4j.version>1.7.5</slf4j.version>
-
-
 		<spring.version>3.1.4.RELEASE</spring.version>
-		<springframework.data.version>1.6.1.RELEASE</springframework.data.version>
-
-		<springframework.data.solr>1.0.0.RELEASE</springframework.data.solr>
-		<xbean-spring.version>3.13</xbean-spring.version>
-		<neo4j.version>1.9</neo4j.version>
 		<springframework.data.neo4j.version>2.3.1.RELEASE</springframework.data.neo4j.version>
-
-
-
-
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-neo4j-rest</artifactId>
+			<version>${springframework.data.neo4j.version}</version>
+			<scope>compile</scope>
+		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<scope>compile</scope>
+		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
@@ -46,67 +59,10 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.neo4j</groupId>
-			<artifactId>neo4j</artifactId>
-			<version>${neo4j.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.neo4j</groupId>
-			<artifactId>neo4j-cypher-dsl</artifactId>
-			<version>1.9</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-neo4j</artifactId>
-			<version>${springframework.data.neo4j.version}</version>
-			<scope>compile</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.neo4j</groupId>
-					<artifactId>neo4j-cypher-dsl</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-neo4j-rest</artifactId>
-			<version>${springframework.data.neo4j.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
-			<scope>compile</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-
-		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>2.2.2</version>
 			<scope>compile</scope>
 		</dependency>
-
 	</dependencies>
 </project>

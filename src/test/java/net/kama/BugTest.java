@@ -17,13 +17,21 @@ public class BugTest {
 	@Test 
 	public void simpleTest() {
 		MyModel model = new MyModel();
-		model.setText(makeString(4000));
+		// MVCaraiman : Different error messages based on different string length :
+		// 	3853 : chunk header too long
+		// 	3910 : Read timed out
+		// 	3960 :  Error adding element 8040 text erhxjgwdnkwis ... to index MyModel
+		model.setText(makeString(3960)); 
 		repo.save(model);
+		
 	}
 	
 	private String makeString(int len){
 		final StringBuilder sb = new StringBuilder();
+		char a = 'a' ; 
+		char z = 'z' ;
 		for (int i = 0 ; i < len ; i++){
+			char x = (char) (a + (int)(Math.random() * (z-a)));
 			sb.append('*');
 		}
 		return sb.toString();
