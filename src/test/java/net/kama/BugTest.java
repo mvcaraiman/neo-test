@@ -10,9 +10,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
   "classpath:/spring/neo4j-test-config.xml"
 })
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
-public class BugTester {
+public class BugTest {
 	@Autowired Repo repo ; 
 
 	@Test 
